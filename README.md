@@ -5,7 +5,7 @@ pipe character ("|"), a number of equal signs that are proportional to the numbe
 text, and the number of occurrences itself. The program reads in the paragraph defined in
 the input.txt file and generates a histograph stored in an output file (output.txt).
 
-##Authors
+## Authors
 * **Elijah Clifford** - [E-cliff](https://github.com/E-cliff)
 
 
