@@ -8,18 +8,16 @@ import java.util.List;
 public class DAO {
 	//Data access object
 
-	//
 	public static String readInFile(String path) {
-
 
 		List<String> output = null;
 		try {
+			//this implementation works for small data sets, very large data sets will need more and different methods
 			output = Files.readAllLines(Paths.get(path));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return "";
 		}
 		return output.toString();
-
 	}
 }
