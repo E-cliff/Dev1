@@ -21,7 +21,7 @@ public class HistogramMaker {
 		printHistogramToFile(sortedWords, outputPath);		
 	}
 
-	public static String[] formatString(String fileContents) {
+	private static String[] formatString(String fileContents) {
 		//change all letters to lower case, then split along common non-letter characters
 		//this implementation will not handle non-ascii character sets
 		String[] words = fileContents.toLowerCase().replaceAll("[^a-z]",  " ").split(" ");
@@ -31,7 +31,7 @@ public class HistogramMaker {
 
 
 
-	public static Map<String, Integer> countWords(String[] words) {
+	private static Map<String, Integer> countWords(String[] words) {
 		HashMap<String, Integer> countedWords = new HashMap<String, Integer>();
 
 		for(String word: words) {
@@ -54,7 +54,7 @@ public class HistogramMaker {
 
 
 
-	public static List<Entry<String, Integer>> sortWords(Map<String, Integer> wordCount){
+	private static List<Entry<String, Integer>> sortWords(Map<String, Integer> wordCount){
 		LinkedList<Entry<String, Integer>> sortedWords = new LinkedList<Entry<String, Integer>>();
 		//copy counted words (as entry word/count pairs) into a LinkedList for sorting
 		sortedWords.addAll(wordCount.entrySet());
@@ -80,7 +80,7 @@ public class HistogramMaker {
 
 
 
-	public static void printHistogramToFile(List<Entry<String, Integer>> sortedWords, String outputPath) {
+	private static void printHistogramToFile(List<Entry<String, Integer>> sortedWords, String outputPath) {
 		//find the longest word for padding purposes in the final printout
 		int longestWord = findLongestWord(sortedWords);
 		//path for the desired output file
@@ -119,7 +119,7 @@ public class HistogramMaker {
 
 
 
-	public static int findLongestWord(List<Entry<String, Integer>> sortedWords) {
+	private static int findLongestWord(List<Entry<String, Integer>> sortedWords) {
 		int currentMaxLength = 0;
 
 		//Loop through the array of string to find the longest one
